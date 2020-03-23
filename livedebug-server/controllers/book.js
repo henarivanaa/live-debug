@@ -7,7 +7,9 @@ class BookController {
       .then(function(newBook) {
         res.status(201).json(newBook);
       })
-      .catch(next);
+      .catch(err => {
+        next(err)
+      });
   }
 }
 
